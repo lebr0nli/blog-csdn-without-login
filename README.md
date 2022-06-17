@@ -32,6 +32,6 @@ Demo:
 
 2. Read the [docs](https://github.com/quoid/userscripts#userscripts-safari) of userscripts and enable userscripts on your device
 
-3. Open [blog-csdn-without-login.user.js](https://raw.githubusercontent.com/lebr0nli/blog-csdn-without-login/main/userscripts/blog-csdn-without-login.user.js) in a new tab and open userscripts in your safari to download this extension
+3. Open [blog-csdn-without-login.user.js](https://raw.githubusercontent.com/lebr0nli/blog-csdn-without-login/main/blog-csdn-without-login.user.js) in a new tab and open userscripts in your safari to download this extension
 
 4. Enjoy!
