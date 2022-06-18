@@ -2,7 +2,7 @@
 // @name        blog.csdn.net without login
 // @description Bypass the annoying login popup of blog.csdn.net and select/copy code without any problem.
 // @match       *://blog.csdn.net/*/article/*
-// @version     2022.06
+// @version     2022.06.18
 // @run-at      document-idle
 // @updateURL   https://raw.githubusercontent.com/lebr0nli/blog-csdn-without-login/main/blog-csdn-without-login.user.js
 // ==/UserScript==
