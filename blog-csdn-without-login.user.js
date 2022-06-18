@@ -19,16 +19,12 @@ function copyToClipboard(text) {
 document.body.querySelectorAll('.hljs-button.signin').forEach(node => {
     node.dataset.title = 'Copy';
     node.removeAttribute('data-report-click');
-    // Chrome and Firefox
-    node.parentElement.style.userSelect = 'text';
-    // Safari
-    node.parentElement.style['-webkit-user-select'] = 'text';
     // Make mdcp.signin do nothing
-    node.setAttribute('onclick', 'mdcp.signin=(e)=>{};');
+    node.setAttribute('onclick', 'window.mdcp ? window.mdcp.signin=(e)=>{} : null;');
     // Copy the code
     node.addEventListener('click', e => {
         e.preventDefault();
-        copyToClipboard(node.parentElement.textContent);
+        copyToClipboard(node.parentElement.innerText);
         node.dataset.title = 'Copied!';
         setTimeout(() => {
             node.dataset.title = 'Copy';
@@ -36,3 +32,17 @@ document.body.querySelectorAll('.hljs-button.signin').forEach(node => {
     });
 });
 
+document.body.querySelectorAll('code').forEach(node => {
+    // Chrome and Firefox
+    node.style.userSelect = 'text';
+    // Safari
+    node.style['-webkit-user-select'] = 'text';
+});
+
+document.addEventListener('copy', e => {
+    // avoid copyright text
+    if (e.clipboardData.getData('text/plain').includes('\r\n————————————————\r\n版权声明')) {
+        e.preventDefault();
+        e.clipboardData.setData('text/plain', document.getSelection().toString());
+    }
+});
